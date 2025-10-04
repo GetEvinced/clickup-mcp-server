@@ -10,6 +10,7 @@ The Server-Sent Events (SSE) transport for the ClickUp MCP Server enables integr
 | ------ | ----------- | ------- |
 | `ENABLE_SSE` | Enable the SSE transport | `false` |
 | `SSE_PORT` | Port for the SSE server | `3000` |
+| `HOST` | Host address for the HTTP server (use `0.0.0.0` for external access) | `127.0.0.1` |
 | `ENABLE_STDIO` | Enable the STDIO transport | `true` |
 
 ## Enabling SSE Transport
@@ -20,6 +21,9 @@ You can enable the SSE transport using environment variables:
 
 ```bash
 ENABLE_SSE=true SSE_PORT=3000 npx @taazkareem/clickup-mcp-server
+
+# For external access (e.g., in Docker/Kubernetes):
+ENABLE_SSE=true SSE_PORT=3000 HOST=0.0.0.0 npx @taazkareem/clickup-mcp-server
 ```
 
 ### Command Line Arguments
