@@ -38,6 +38,7 @@ for (let i = 0; i < args.length; i++) {
     if (key === 'SSE_PORT') envArgs.ssePort = value;
     if (key === 'ENABLE_STDIO') envArgs.enableStdio = value;
     if (key === 'PORT') envArgs.port = value;
+    if (key === 'HOST') envArgs.host = value;
     i++;
   }
 }
@@ -80,6 +81,7 @@ interface Config {
   ssePort: number;
   enableStdio: boolean;
   port?: string;
+  host: string;
   // Security configuration (opt-in for backwards compatibility)
   enableSecurityFeatures: boolean;
   enableOriginValidation: boolean;
@@ -133,6 +135,7 @@ const configuration: Config = {
   ssePort: parseInteger(envArgs.ssePort || process.env.SSE_PORT, 3000),
   enableStdio: parseBoolean(envArgs.enableStdio || process.env.ENABLE_STDIO, true),
   port: envArgs.port || process.env.PORT || '3231',
+  host: envArgs.host || process.env.HOST || '127.0.0.1',
   // Security configuration (opt-in for backwards compatibility)
   enableSecurityFeatures: parseBoolean(process.env.ENABLE_SECURITY_FEATURES, false),
   enableOriginValidation: parseBoolean(process.env.ENABLE_ORIGIN_VALIDATION, false),

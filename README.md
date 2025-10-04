@@ -142,6 +142,7 @@ Available configuration options:
 | `DISABLED_TOOLS` | Comma-separated list of tools to disable | None |
 | `ENABLE_SSE` | Enable the HTTP/SSE transport | `false` |
 | `PORT` | Port for the HTTP server | `3231` |
+| `HOST` | Host address for the HTTP server (use `0.0.0.0` for external access) | `127.0.0.1` |
 | `ENABLE_STDIO` | Enable the STDIO transport | `true` |
 | `ENABLE_SECURITY_FEATURES` | Enable security headers and logging | `false` |
 | `ENABLE_HTTPS` | Enable HTTPS/TLS encryption | `false` |
